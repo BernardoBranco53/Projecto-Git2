@@ -1,0 +1,910 @@
+/* Estilos gerais */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.topo {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 5px 20px;
+}
+.image-icon-social-media{
+    width: 25px;
+    height: 25px;
+    border-radius: 7px;
+    padding: 2px;
+}
+
+.links-topo a {
+    text-decoration: none;
+    margin-left: 15px;
+    color: #000;
+    font-size: 14px;
+}
+
+.botao-cadastre-se{
+    padding: 6px;
+    transition-duration: 0.4s;
+}
+.botao-cadastre-se:hover{
+    background-color: #cf202f;
+    color: white;
+    border-radius: 20px;
+  transform: rotate(30deg);
+    transition-duration: 0.4s;
+
+}
+.botao-cadastre-se:active{
+    animation: vibrar 0.2s linear;
+
+}
+.botao-i-sessao {
+    color: #fff;
+    padding: 5px 10px;
+    padding: 6px;
+    transition-duration: 0.4s;
+ 
+}
+.botao-i-sessao:hover{
+    background-color: #cf202f;
+    color: white;
+    border-radius: 20px;
+    transform: rotate(3deg);
+    transition-duration: 0.4s;
+}
+
+/* FORMULÁRIOS MODERNIZADOS */
+.formulario {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  width: 350px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -55%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.formulario h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #cf202f;
+  font-size: 24px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.formulario h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #cf202f, #ff6b6b);
+  border-radius: 3px;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #495057;
+  font-size: 14px;
+}
+
+.formulario input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.formulario input:focus {
+  border-color: #cf202f;
+  box-shadow: 0 0 0 3px rgba(207, 32, 47, 0.2);
+  outline: none;
+}
+
+.formulario input[type="date"] {
+  padding: 11px 15px;
+}
+
+.formulario select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.8);
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px;
+}
+
+.formulario .form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.formulario button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formulario button[type="submit"] {
+  background: linear-gradient(135deg, #cf202f, #e63946);
+  color: white;
+  box-shadow: 0 4px 6px rgba(207, 32, 47, 0.2);
+}
+
+.formulario button[type="submit"]:hover {
+  background: linear-gradient(135deg, #b51d2a, #cf202f);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(207, 32, 47, 0.3);
+}
+
+.formulario button[type="button"] {
+  background: #f8f9fa;
+  color: #495057;
+  border: 1px solid #e0e0e0;
+}
+
+.formulario button[type="button"]:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+/* Estilo específico para o formulário de login */
+#formulario-login {
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+}
+
+#formulario-login h2 {
+  color: #2b6cb0;
+}
+
+#formulario-login h2::after {
+  background: linear-gradient(90deg, #2b6cb0, #4299e1);
+}
+
+#formulario-login button[type="submit"] {
+  background: linear-gradient(135deg, #2b6cb0, #4299e1);
+  box-shadow: 0 4px 6px rgba(43, 108, 176, 0.2);
+}
+
+#formulario-login button[type="submit"]:hover {
+  background: linear-gradient(135deg, #2c5282, #2b6cb0);
+  box-shadow: 0 6px 12px rgba(43, 108, 176, 0.3);
+}
+
+/* Estilo para mensagens de erro */
+.formulario .error-message {
+  color: #e53e3e;
+  font-size: 13px;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Efeito de shake para campos inválidos */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+.formulario input.error {
+  border-color: #e53e3e;
+  animation: shake 0.4s ease;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .formulario {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  .formulario h2 {
+    font-size: 20px;
+  }
+  
+  .formulario input, 
+  .formulario select,
+  .formulario button {
+    padding: 10px 12px;
+  }
+}
+
+/* Melhorias na barra de rolagem */
+.formulario::-webkit-scrollbar {
+  width: 8px;
+}
+
+.formulario::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.formulario::-webkit-scrollbar-thumb {
+  background: linear-gradient(#cf202f, #e63946);
+  border-radius: 10px;
+}
+
+.formulario::-webkit-scrollbar-thumb:hover {
+  background: #b51d2a;
+}
+
+/* Restante do CSS original */
+nav.menu.fixo {
+  position: fixed;
+  top: 0;
+ }
+.menu {
+   position: relative; /* Posição padrão */
+  width: 100%;
+  transition: all 0.3s ease; /* Transição suave para mudanças */
+   backdrop-filter: blur(50px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(5px);
+    background-color: #cf202f;
+  display: flex;
+    align-items: center;
+    position: sticky; /* Fica "grudento" */
+    top: 0; /* Quando alcançar este ponto, ficará fixo */
+   
+}
+
+.logo img {
+    width: 70px;
+   height: 70px;
+    
+}
+
+.menu-itens {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-itens li  {
+margin: 10px;
+}
+#btn-abrir-formulario {
+  position: fixed;
+  top: 50%; /* Ajusta a posição vertical */
+  left: 0px; /* Ajusta a posição horizontal */
+  background-color: rgba(255, 0, 0, 0.7); /* Fundo vermelho com transparência */
+  color: white; /* Cor do texto */
+  border: none; /* Remove a borda */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  font-weight: bold; /* Deixa o texto em negrito */
+  cursor: pointer; /* Mostra o cursor de clique */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+  transition: all 0.3s ease; /* Transição suave para hover */
+}
+
+#btn-abrir-formulario:hover {
+  background-color: rgba(255, 0, 0, 0.9); /* Fundo mais opaco ao passar o mouse */
+  transform: scale(1.05); /* Aumenta levemente o botão */
+}
+
+#btn-abrir-formulario:active {
+  transform: scale(0.95); /* Reduz levemente o botão ao clicar */
+}
+
+
+
+.menu-itens li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    transition-duration: 0.9s;
+    padding: 10px;
+    transform: rotate('30deg');
+   border-radius:  20px 0 20px;
+   
+}
+.menu-itens li a.desativar:hover {
+   background-color: initial;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra */
+   border-radius: 0px;
+}
+.img-icones-menu{
+    width: 30px;
+    height: 30px;
+    transform: translateY(2px);
+
+      
+}
+.img-icones-menu:hover{
+ 
+transition-duration: 0.4s;
+border-radius: 0px;
+}
+.menu-itens li a:hover{
+    background-color: initial;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra */
+    border-radius: 0px;
+        }
+        .desativar:hover{
+            background-color: #007baa;    
+            }
+            .container-exibir-conta{
+                cursor: pointer;
+               
+                position: relative;
+                display: inline-block;
+              
+            }
+            .container-exibir-conta li{
+                display: block;
+            width: 20px;
+            background-color: white;
+            }
+            .contador {
+                position: absolute;
+                top: 11px;
+                right: 11px;
+                background: rgb(255, 254, 254);
+                color: rgb(247, 13, 13);
+                font-size: 14px;
+                font-weight: bold;
+                min-width: 10px; /* Largura mínima */
+                height: 20px;
+                padding: 0 6px; /* Expande horizontalmente */
+                border-radius: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform: translate(50%, -50%);
+                
+                white-space: nowrap; /* Impede que o texto quebre */
+            }
+
+/* Estilo do botão circular */
+#menu-lateral {
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border: 2px solid  white;
+    top: 20px;
+    right: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+#menu-lateral:hover{
+    border: 2px solid  white;
+    background-color: #cf202f;
+transition-duration: 0.4s;
+}
+#menu-lateral:hover .icone-hamburguer {
+    background-color: white;
+}
+#menu-lateral:hover .icone-hamburguer::after {
+    background-color: white;
+}
+#menu-lateral:hover .icone-hamburguer::before {
+    background-color: white;
+}
+/* Estilo da barra central do hambúrguer */
+.icone-hamburguer {
+    position: relative;
+    background-color: #cf202f;
+    width: 25px;
+    height: 3px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Barras superior e inferior */
+.icone-hamburguer::before,
+.icone-hamburguer::after {
+    content: '';
+    position: absolute;
+    background-color: #cf202f;
+    width: 100%;
+    height: 3px;
+    border-radius: 3px;
+    transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+}
+
+/* Posição inicial das barras */
+.icone-hamburguer::before {
+    top: -8px;
+}
+
+.icone-hamburguer::after {
+    top: 8px;
+}
+
+/* Escondendo o checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Quando clicado, transforme o ícone em um "X" */
+input:checked ~ label #menu-lateral .icone-hamburguer {
+    background-color: transparent; 
+}
+
+input:checked ~ label #menu-lateral .icone-hamburguer::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+input:checked ~ label #menu-lateral .icone-hamburguer::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+
+/*Estilo do menu lateral*/
+#opcoes-menu{
+   position: relative;
+   top: 600px;
+   transition-duration: 0.5s;
+   transition-timing-function: ease-in-out;
+}
+#local-pesquisa{
+    margin-top: 60px;
+    border: 2px solid red;
+    padding: 15px;
+    }
+    .menu-lateral {
+        border: 3px solid;
+        border-image: linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8);
+        border-image-slice: 1;         /* Aplica o gradiente em toda a borda */
+        border-radius: 12px;
+        padding: 10px;
+            width: 300px;
+            height: 100vh; 
+            background: #b3b3b67e;
+            color: #cf202f;
+            padding-top: 20px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        
+            overflow-y: auto; /*barra de rolagem vertical */
+        position: fixed;
+        top: 0px;
+        right: -350px;
+        transition-duration: 0.5s;
+        
+    }
+    
+    .menu-lateral ul {
+        list-style-type: none;
+        padding: 0;
+        
+           
+            border-radius: 2px;
+       
+    }
+    .menu-lateral li {
+     
+        text-align: left;
+        color: #cf202f;
+       
+        border-right: 1px solid white;
+        
+       
+    }
+    
+    .menu-lateral a {
+        
+        padding: 8px;
+        text-decoration: none;
+        display: block;
+        color: #cf202f;
+        transition-duration: 0.1s;
+       
+    }
+    
+    .menu-lateral a:hover {
+        border-radius: 2px;
+        color: white;
+        text-decoration: none;
+        display: block;
+        display: flex;          
+        align-items: center;      
+        gap: 10px;
+        background-color: #cf202f;
+        transition-duration: 0.4s;
+        border-radius: 20px 0 20px;
+        
+    }
+    #local-pesquisa{
+        display: flex;
+       
+    }
+
+
+    /*Efeito movimento do botão*/
+    
+    #menu-lateral-2 {
+        content: 'X';
+        background-color: rgb(226, 6, 6);
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        float: right;
+        display: flex;
+        justify-content: center;
+     position: fixed;
+        top: 26px;
+        right: 280px;
+        align-items: center;
+      
+    }
+    
+    /* Estilo da barra central do hambúrguer */
+   
+    .icone-hamburguer-2 {
+        position: fixed;
+        top: 35px;
+    transform: translateX(4px) translateY(1px);
+        background-color: #d6a2a600;
+        width: 15px;
+        height: 3px;
+        
+        border-radius: 3px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    /* Barras superior e inferior */
+    .icone-hamburguer-2::before,
+    .icone-hamburguer-2::after {
+        content: '';
+        position: absolute;
+        background-color: #ffffff;
+        width: 100%;
+        height: 3px;
+        border-radius: 3px;
+        transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+    }
+    
+    /* Posição inicial das barras */
+    .icone-hamburguer-2::before {
+        top: -8px;
+        transform: rotate(45deg);
+        top: 0;
+        transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+   
+    }
+    
+    .icone-hamburguer-2::after {
+        top: 8px;
+        transform: rotate(-45deg);
+        top: 0;
+        transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+   
+    }
+    
+    /* Escondendo o checkbox */
+    #menu-toggle{
+        display: none;
+    }
+   
+    /* Quando clicado, transforme o ícone em um "X" */
+    input:checked ~ label #menu-lateral-2 .icone-hamburguer-2 {
+        background-color: transparent;
+    
+    }
+    
+    input:checked ~ label #menu-lateral .icone-hamburguer-2::before {
+        transform: rotate(0deg);
+        top: -8px;
+    }
+    
+    input:checked ~ label #menu-lateral .icone-hamburguer-2::after {
+        transform: rotate(0deg);
+        top: 8px;
+    }
+    
+    .menu-lateral input:checked ~ label #menu-lateral-2{
+        position: relative;
+        top: 1;
+       
+    }
+       
+       /*Exibir produtos*/
+   /* Estilo para a área de produtos */
+#conteudo-produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.produto {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.produto img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+    width: 150px; /* Largura padrão */
+  height: 150px; /* Altura padrão */
+  object-fit: cover; /* Ajusta a imagem para preencher o espaço sem distorção */
+  border-radius: 8px; /* Bordas arredondadas (opcional) */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave (opcional) */
+
+}
+
+.produto h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.produto button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.produto button:hover {
+  background-color: #0056b3;
+}
+        /*campo add produto*/
+
+  #lista-compras img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 4px;
+  }
+#lista-compras {
+  position: fixed;
+  top: -20px; /* Posição vertical */
+  right: 0px; /* Posição horizontal */
+  height: 100vh; /* Altura total da janela */
+  background: rgba(255, 0, 0, 0.4); /* Fundo semi-transparente vermelho */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  width: 0; /* Começa com largura 0 */
+  display: block; /* Mantém o elemento visível para que a transição funcione */
+  transition: width 0.5s ease, opacity 0.7s ease; /* Transição suave para largura e opacidade */
+  overflow-y: scroll; /* Permite rolagem vertical */
+  opacity: 0; /* Inicialmente invisível */
+}
+
+#lista-compras::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+#lista-compras::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5); /* Cor da barra de rolagem */
+  border-radius: 4px; /* Bordas arredondadas */
+}
+
+#lista-compras::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.7); /* Cor ao passar o mouse */
+}
+.lista-compras{
+    
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    background: #f8f8f8; /* Cor de fundo */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: 0px;
+    left: 40px;
+}
+#lista-compras h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #333;
+}
+#lista-compras ul {
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0; /* Remove o preenchimento padrão */
+  margin: 0; /* Remove a margem padrão */
+}
+
+/*EXIBIR FFORMULARIO ADD PRODUTOS*/
+#fechar-lista {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+/* Fundo escuro */
+#fundo-escuro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.863); /* Fundo preto semi-transparente */
+  z-index: 999; /* Coloca o fundo acima de outros elementos */
+  display: none; /* Inicialmente invisível */
+}
+
+/* Formulário centralizado */
+#formulario-produto {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza o formulário */
+  background-color: white; /* Fundo branco */
+  padding: 20px;
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  z-index: 1000; /* Coloca o formulário acima do fundo escuro */
+  width: 300px; /* Largura fixa */
+  display: none; /* Inicialmente invisível */
+}
+
+/* Estilo dos campos do formulário */
+#formulario-produto label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+#formulario-produto input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#formulario-produto button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#formulario-produto button:hover {
+  background-color: #0056b3;
+}
+#h3-lista-compras{
+    color: #cf202f;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#h3-lista-compras:hover{
+    color: #cf202f;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    transform: rotate(3deg);
+    transition-duration: 0.4s;
+}
+.item-lista {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 10px 0;
+  background: #ffffff; /* Fundo branco */
+  border: 1px solid #ddd; /* Borda cinza */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: background 0.3s ease, transform 0.2s ease; /* Transições suaves */
+}
+
+.item-lista:hover {
+  background: #f9f9f9; /* Fundo mais claro ao passar o mouse */
+  transform: scale(0.97); /* Aumenta levemente o item */
+}
+
+.item-lista img {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.item-lista .info-produto {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+.item-lista .remover-item {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.item-lista .remover-item:hover {
+  color: #e60000;
+}
+#total-compras {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffffff; /* Texto branco */
+  background-color: #28a745; /* Fundo verde */
+  padding: 10px 15px;
+  border-radius: 8px; /* Bordas arredondadas */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#total-compras:hover {
+  background-color: #218838; 
+  transform: scale(0.97); 
+}
+.erro {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+/*FiM*/

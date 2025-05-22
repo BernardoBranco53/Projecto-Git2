@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barra de Navegação Responsiva</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Cabeçalho do site -->
+  <header class="cabecalho">
+    <div class="topo">
+      <a href="#"></a>
+
+      <!-- Ícones de redes sociais -->
+      <div class="icones-sociais">
+        <a href="#"><img class="image-icon-social-media" src="Icones do menu/facebook.png"></a>
+        <a href="#"><img class="image-icon-social-media" src="Icones do menu/instagram.png"></a>
+        <a href="#"><img class="image-icon-social-media" src="Icones do menu/social.png"></a>
+        <a href="#"><img class="image-icon-social-media" src="Icones do menu/twitter.png"></a>
+      </div>
+
+      <!-- Links de autenticação -->
+      <div class="links-topo">
+        <a href="#" class="botao-cadastre-se">Cadastre-se</a>
+        <a href="#" class="botao-i-sessao">Iniciar sessão</a>
+      </div>
+    </div>
+<!-- Formulário de Cadastro -->
+<div id="formulario-cadastro" class="formulario" style="display: none;">
+  <h2>Cadastre-se</h2>
+  <form id="form-cadastro">
+    <label for="cadastro-nome">Nome:</label>
+    <input type="text" id="cadastro-nome" name="nome" required>
+
+    <label for="cadastro-email">Email:</label>
+    <input type="email" id="cadastro-email" name="email" required>
+
+    <label for="cadastro-senha">Senha:</label>
+    <input type="password" id="cadastro-senha" name="senha" required>
+
+    <label for="cadastro-confirmar-senha">Confirmar Senha:</label>
+    <input type="password" id="cadastro-confirmar-senha" name="confirmar_senha" required>
+
+    <label for="cadastro-pais">País:</label>
+    <input type="text" id="cadastro-pais" name="pais" value="Angola" readonly>
+
+    <label for="cadastro-morada">Morada:</label>
+    <input type="text" id="cadastro-morada" name="morada">
+
+    <label for="cadastro-localizacao">Localização:</label>
+    <input type="text" id="cadastro-localizacao" name="localizacao">
+
+    <label for="cadastro-telemovel">Telemóvel:</label>
+    <input type="text" id="cadastro-telemovel" name="telemovel">
+
+    <label for="cadastro-data-nascimento">Data de Nascimento:</label>
+    <input type="date" id="cadastro-data-nascimento" name="data_nascimento">
+
+    <label for="cadastro-genero">Gênero:</label>
+    <select id="cadastro-genero" name="genero">
+      <option value="Masculino">Masculino</option>
+      <option value="Feminino">Feminino</option>
+      <option value="Outro">Outro</option>
+    </select>
+
+    <button type="submit">Cadastrar</button>
+    <button type="button" id="fechar-cadastro">Fechar</button>
+  </form>
+</div>
+<!-- Formulário de Login -->
+<div id="formulario-login" class="formulario" style="display: none;">
+  <h2>Iniciar Sessão</h2>
+  <form id="form-login">
+    <label for="login-email">Email:</label>
+    <input type="email" id="login-email" name="email" required>
+
+    <label for="login-senha">Senha:</label>
+    <input type="password" id="login-senha" name="senha" required>
+
+    <button type="submit">Entrar</button>
+    <button type="button" id="fechar-login">Fechar</button>
+  </form>
+</div>
+
+<!--MEU ADMIN-->
+<div id="menu-admin" style="display: none;">
+  <h3>Administração</h3>
+  <ul>
+    <li><a href="#" onclick="abrirFormularioProduto()">Adicionar Produto</a></li>
+    <li><a href="#">Gerenciar Usuários</a></li>
+  </ul>
+</div>
+
+<button id="btn-logout" style="display: none;">Sair</button>
+    <!-- Menu principal -->
+    <nav class="menu">
+      <div class="logo">
+        <img src="Icones do menu/images.jpeg" class="image-logo" alt="">
+      </div>
+
+      <ul class="menu-itens">
+        <li>
+          <!--INICIO ICONE-->
+          <a href="Index.html">
+            <img class="img-icones-menu" src="Icones do menu/home-icon-silhouette.png" alt="">
+          </a>
+          <!--Promoções ICONE-->
+          <a href="#">
+            <img class="img-icones-menu" src="Icones do menu/promotion.png" alt="">
+          </a>
+          <!--Lista Compras ICONE-->
+          <a href="#" class="desativar" onclick="exibirListaProdutos()">
+            <img class="img-icones-menu" src="Icones do menu/list (1).png" alt="">
+          </a>
+          
+          <div class="container-exibir-conta">
+            <li><img class="img-icones-menu" src="Icones do menu/wallet.png" alt=""></li>
+            <span class="contador">N</span>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Botão do menu lateral -->
+      <input id="menu-toggle" type="checkbox">
+      <label for="menu-toggle">
+        <div id="menu-lateral">
+          <span class="icone-hamburguer"></span>
+        </div>
+      </label>
+    </nav>
+  </header>
+
+  <!-- Menu Lateral -->
+  <div class="menu-lateral">
+    <input id="menu-toggle" type="checkbox">
+    <label for="menu-toggle">
+      <div id="menu-lateral-2">
+        <span class="icone-hamburguer-2"></span>
+      </div>
+    </label>
+
+    <nav id="barra">
+      <!-- Campo de pesquisa -->
+     <div id="local-pesquisa">
+  <input type="search" id="pesquisa" placeholder="Pesquisar produtos...">
+  <button id="btn-pesquisar">Pesquisar</button>
+</div>
+
+      <!-- Opções do menu lateral -->
+       
+    <ul id="opcoes-menu">
+      <!-- As categorias serão carregadas dinamicamente aqui -->
+    </ul>
+
+
+    </nav>
+  </div>
+
+  <main id="conteudo-produtos">
+    <!-- Os produtos de produtos.html serão inseridos aqui -->
+  </main>
+  <!-- Botão para abrir o formulário -->
+<button id="btn-abrir-formulario" title="Adicionar produto">+</button>
+
+
+<!-- Fundo escuro para o formulário -->
+<div id="fundo-escuro" style="display: none;"></div>
+
+<!-- Formulários para adicionar um novo produto -->
+<form id="formulario-produto" class="formulario" style="display: none;">
+  <label for="produto-nome">Nome do Produto:</label>
+  <input type="text" id="produto-nome" name="nome" required>
+
+  <label for="produto-preco">Preço:</label>
+  <input type="number" id="produto-preco" min="10" name="preco" step="0.01" required>
+
+  <label for="produto-imagem">URL da Imagem:</label>
+  <input type="text" id="produto-imagem" name="imagem" required>
+<label for="produto-categoria">Categoria:</label>
+<select id="produto-categoria" name="categoria" required>
+  <option value="" disabled selected>Selecione uma categoria</option>
+  <!-- As categorias serão carregadas dinamicamente aqui -->
+</select>
+
+  <button type="submit">Adicionar</button>
+</form>
+
+<!-- Lista de compras -->
+<div id="lista-compras" style="width: 0; opacity: 0; transition: all 0.3s;" onclick="exibirListaProdutos()">
+  <button id="fechar-lista" style="position: absolute; top: 25px; right: 10px; background: #ffffff; border-radius: 100%; font-size: 20px; cursor: pointer;">X</button>
+  <h3 id="h3-lista-compras">Lista de Compras</h3>
+  <div id="nadaNoCarrinho" style="display: block;">Nenhum item no carrinho.</div>
+  <div id="total-compras" style="margin-top: 20px; font-weight: bold; font-size: 16px; display: none;">Total: KZ 0.00</div>
+</div>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+  
+</body>
+</html>

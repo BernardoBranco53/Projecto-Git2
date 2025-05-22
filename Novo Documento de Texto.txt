@@ -1,0 +1,39 @@
+-- Criação do banco de dados
+CREATE DATABASE "MeuProjecto";
+
+-- Conecte-se ao banco de dados antes de criar as tabelas
+\c "MeuProjecto";
+
+-- Criação da tabela de usuários
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    pais VARCHAR(100),
+    morada VARCHAR(255),
+    localizacao VARCHAR(255),
+    telemovel VARCHAR(20),
+    data_nascimento DATE,
+    genero VARCHAR(20),
+    tipo VARCHAR(20) DEFAULT 'normal'
+);
+
+-- Criação da tabela de categorias
+CREATE TABLE categorias (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) UNIQUE NOT NULL
+);
+
+-- Criação da tabela de produtos
+CREATE TABLE produtos (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco NUMERIC(10,2) NOT NULL,
+    imagem VARCHAR(255) NOT NULL,
+    categoria VARCHAR(100) NOT NULL
+);
+
+-- Permitir que o usuário 'branco' acesse todas as tabelas
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO branco;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO branco;
